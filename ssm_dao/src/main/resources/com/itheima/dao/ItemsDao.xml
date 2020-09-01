@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace= Dao接口的全限定名
+
+-->
+<mapper namespace="com.itheima.dao.ItemsDao">
+    <insert id="save" parameterType="com.itheima.pojo.Items">
+            insert into items(name,price,pic,createtime,detail)
+            values(#{name},#{price},#{pic},#{createtime},#{detail})
+    </insert>
+
+    <!--查询所有商品列表-->
+    <select id="list" resultType="com.itheima.pojo.Items">
+        SELECT  * from items
+    </select>
+</mapper>
